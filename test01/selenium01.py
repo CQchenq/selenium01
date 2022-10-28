@@ -5,7 +5,10 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 import time
 
+
 wd = webdriver.Chrome(service=Service(r'F:\chromedriver_win32\chromedriver.exe'))
+# 设置全局等待时间为 10 秒
+wd.implicitly_wait(10)
 # 调用WebDriver 对象的get方法 可以让浏览器打开指定网址
 url = 'http://admin-p2p-test.itheima.net/'
 wd.get(url)
@@ -35,7 +38,7 @@ class loginUrl:
         wd.find_element(By.ID, 'password').send_keys(password)
         wd.find_element(By.ID, 'valicode').send_keys(valicode)
         wd.find_element(By.CLASS_NAME, 'login-button').click()
-        time.sleep(2)
+        # time.sleep(2)
         wd.find_element(By.XPATH, '/html/body/div[1]/div[2]/ul/li[2]/a').click()
         print("登录成功，进入首页")
 
@@ -44,9 +47,9 @@ class loginUrl:
     def AllBorrowings(self):
         #登陆后在所有贷款中进行搜索测试
         wd.find_element(By.XPATH,'//*[@id="sidebar"]/ul/li[1]/a').click()
-        time.sleep(1)
+        # time.sleep(1)
         wd.find_element(By.XPATH,'//*[@id="sidebar"]/ul/li[1]/ul/li[1]/a').click()
-        time.sleep(1)
+        # time.sleep(1)
         #frame窗口切换
         wd.switch_to.frame('iframe_box')
         wd.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/ul/li[1]/div/input').send_keys('19800001111')
@@ -59,15 +62,15 @@ class loginUrl:
         wd.find_element(By.XPATH, '//*[@id="startTime"]').send_keys('2021-10-19')
         wd.find_element(By.XPATH, '//*[@id="endTime"]').send_keys('2022-10-20')
         wd.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/ul/li[6]/div/select').click()
-        time.sleep(2)
+        # time.sleep(2)
         wd.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/ul/li[6]/div/select/option[2]').click()
-        time.sleep(2)
+        # time.sleep(2)
         wd.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/ul/li[7]/div/select').click()
-        time.sleep(1)
+        # time.sleep(1)
         wd.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/ul/li[7]/div/select/option[2]').click()
-        time.sleep(2)
+        # time.sleep(2)
         wd.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/ul/li[8]/div/select').click()
-        time.sleep(2)
+        # time.sleep(2)
         wd.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/ul/li[8]/div/select/option[10]').click()
         wd.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/ul/li[9]/input').click()
 x = loginUrl()
