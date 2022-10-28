@@ -12,27 +12,27 @@ def css(element):
     return wd.find_element(By.CSS_SELECTOR,element)
 
 # 通过 xpath 获取元素
-def css(element):
+def xpath(element):
     return wd.find_element(By.XPATH,element)
 
 # 通过 partial_link_text 获取元素
-def css(element):
+def partial_link_text(element):
     return wd.find_element(By.PARTIAL_LINK_TEXT,element)
 
 # 通过 link_text 获取元素
-def css(element):
+def link_text(element):
     return wd.find_element(By.LINK_TEXT,element)
 
 # 通过 tag_name 获取元素
-def css(element):
+def tag_name(element):
     return wd.find_element(By.TAG_NAME,element)
 
 # 通过 class_name 获取元素
-def css(element):
+def class_name(element):
     return wd.find_element(By.CLASS_NAME,element)
 
 # 通过 by_name 获取元素
-def css(element):
+def by_name(element):
     return wd.find_element(By.NAME,element)
 
 def return_driver():
